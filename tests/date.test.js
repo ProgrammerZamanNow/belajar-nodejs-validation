@@ -6,6 +6,8 @@ describe('Joi', function () {
 
         const result = birthDateSchema.validate("1-1-1987");
         console.info(result);
+        console.info(typeof result.value); // Date
+        console.info(typeof result.error); // ValidationError
 
         const result2 = birthDateSchema.validate("12-25-1990");
         console.info(result2);
