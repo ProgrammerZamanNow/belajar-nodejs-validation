@@ -4,7 +4,9 @@ describe('Joi', function () {
     it('should return validation error', function () {
         const usernameSchema = Joi.string().min(5).email().required();
 
-        const result = usernameSchema.validate("ups");
+        const result = usernameSchema.validate("ups", {
+            abortEarly: false
+        });
         console.info(result);
 
         if(result.error){
